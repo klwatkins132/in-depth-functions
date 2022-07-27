@@ -1,7 +1,7 @@
 'use strict';
-
 ///////////////////////////////////////
 // Default Parameters
+
 console.log('*****DEFAULT PARAMETERS*****');
 const bookings = [];
 
