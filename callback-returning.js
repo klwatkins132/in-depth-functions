@@ -28,3 +28,24 @@ const high5 = function () {
 };
 document.body.addEventListener('click', high5);
 ['Jonas', 'Martha', 'Adam'].forEach(high5);
+
+
+///////////////////////////////////////
+// Functions Returning Functions
+
+console.log('*****Functions Returning Functions*****');
+const greet = function (greeting) {
+    return function (myName) {
+        console.log(`${greeting} ${myName}`);
+    }
+}
+
+const greeterHey = greet('Hey')
+greeterHey('Kelsy');
+greeterHey('Steven');
+
+greet('Hello')('Kelsy Lynn');
+
+// writing the same function as an arrow function
+const greetArr = greeting => myName => console.log(`${greeting} ${myName}`);
+greetArr('Hi')('Bella dog');
