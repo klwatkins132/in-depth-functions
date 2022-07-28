@@ -9,13 +9,13 @@ const jetblue = {
     airline: 'JetBlue',
     iataCode: 'JB',
     bookings: [],
-    book(flightNum, customerName) {
+    booking(flightNum, customerName) {
         console.log(`${customerName} booked a seat on ${this.airline} flight ${this.iataCode}${flightNum}`);
         this.bookings.push({ flight: `${this.iataCode}${flightNum}`, customerName })
     },
 };
 
-const book = jetblue.book
+const booking = jetblue.booking
 
 const spiritAirlines = {
     airline: 'Spirit Airlines',
@@ -29,16 +29,16 @@ const southwest = {
     bookings: [],
 };
 
-const bookJB = book.bind(jetblue);
-const bookSPA = book.bind(spiritAirlines);
-const bookSWA = book.bind(southwest);
+const bookJB = booking.bind(jetblue);
+const bookSPA = booking.bind(spiritAirlines);
+const bookSWA = booking.bind(southwest);
 
 bookJB(23, 'Steven Williams');
 bookSPA(114, 'Kelsy Watkins');
 bookSWA(87, 'Sally Hansen');
 
 // partial application - preset parameters
-const bookJB23 = book.bind(jetblue, 23);
+const bookJB23 = booking.bind(jetblue, 23);
 bookJB23('Martha Cooper');
 bookJB23('Kelly Smith');
 
