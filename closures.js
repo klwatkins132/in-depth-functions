@@ -64,6 +64,7 @@ const passengerBoard = function (numOfPassengers, waitTime) {
 const perGroup = 1000; // scope chain does not have priority 
 passengerBoard(180, 3);
 
+// simple event listener function
 (function () {
     const header = document.querySelector('h1');
     header.style.color = 'pink';
