@@ -20,9 +20,9 @@ booker(); // 3 passengers
 
 console.dir(booker);
 
+
 console.log('*****CLOSURES PT2*****');
 // *** Dont need to return function from another function in order to create a closure
-
 let funcOne;
 
 const funcTwo = function () {
@@ -45,3 +45,21 @@ funcOne(); // 46
 //re-assigning funcOne function
 funcThree();
 funcOne(); // 1554
+
+
+console.log('*****CLOSURES PT3*****');
+const passengerBoard = function (numOfPassengers, waitTime) {
+
+    // callback function will close over perGroup variable and global variable below does not get used  
+    const perGroup = numOfPassengers / 3;
+
+    setTimeout(function () {
+        console.log(`We are now boarding all ${numOfPassengers} passengers.`);
+        console.log(`There are 3 groups, each with ${perGroup} passengers.`)
+    }, waitTime * 1000);
+
+    console.log(`Will start boarding in ${waitTime} seconds.`);
+};
+
+const perGroup = 1000; // scope chain does not have priority 
+passengerBoard(180, 3);
